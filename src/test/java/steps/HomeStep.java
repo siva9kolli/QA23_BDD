@@ -1,5 +1,6 @@
 package steps;
 
+import Page.Pages;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.*;
 
@@ -7,6 +8,8 @@ import java.util.List;
 import java.util.Map;
 
 public class HomeStep {
+    public Pages page;
+
     @Given("User open application")
     public void user_open_application() {
         System.out.println("User open application");
@@ -18,7 +21,9 @@ public class HomeStep {
 
     @Then("I login with {string} and {string}")
     public void i_login_with_and(String userName, String pwd) {
-        System.out.println("My credentials :: " + userName + " and  password is :: " + pwd);
+         page = new Pages();
+         page.sum(userName, pwd);
+       // System.out.println("My credentials :: " + userName + " and  password is :: " + pwd);
     }
 
 
