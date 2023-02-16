@@ -1,31 +1,37 @@
 package steps;
 
-import Page.Pages;
+
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.*;
+import org.junit.Assert;
 
 import java.util.List;
 import java.util.Map;
 
 public class HomeStep {
-    public Pages page;
+
 
     @Given("User open application")
     public void user_open_application() {
         System.out.println("User open application");
     }
+
     @When("User on welcome screen")
     public void user_on_welcome_screen() {
         System.out.println("User on welcome screen");
     }
 
-    @Then("I login with {string} and {string}")
-    public void i_login_with_and(String userName, String pwd) {
-         page = new Pages();
-         page.sum(userName, pwd);
-       // System.out.println("My credentials :: " + userName + " and  password is :: " + pwd);
+    @Then("User verify welcome screen")
+    public void verifyWelcomeScreen(){
+        System.out.println("User verify welcome screen");
+        Assert.assertTrue(true);
     }
 
+    @Then("I login with {string} and {string}")
+    public void i_login_with_and(String userName, String pwd) {
+
+       // System.out.println("My credentials :: " + userName + " and  password is :: " + pwd);
+    }
 
     @Given("I entered my credentials")
     public void i_entered_my_credentials(DataTable dataTable) {

@@ -4,6 +4,7 @@ Feature: Home Module
   Scenario: Verify welcome page
     Given User open application
     When User on welcome screen
+    Then User verify welcome screen
 
   @android @home
   Scenario: Verify successfull login
