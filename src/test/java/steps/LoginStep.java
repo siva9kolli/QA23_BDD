@@ -29,10 +29,10 @@ public class LoginStep extends Runner {
     public static void setUp(){
         WebDriverManager.edgedriver().setup();
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
-        EdgeOptions options = new EdgeOptions();
+        ChromeOptions chromeOptions = new ChromeOptions();
         desiredCapabilities.setCapability("browserName", "chrome");
-        options.merge(desiredCapabilities);
-        driver = new EdgeOptions(options);
+        chromeOptions.merge(desiredCapabilities);
+        driver = new ChromeDriver(chromeOptions);
         driver.get("https://www.saucedemo.com/");
     }
 
