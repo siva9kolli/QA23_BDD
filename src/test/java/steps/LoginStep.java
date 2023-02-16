@@ -11,6 +11,7 @@ import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import runner.Runner;
 
@@ -26,12 +27,12 @@ public class LoginStep extends Runner {
 
     @Before
     public static void setUp(){
-        WebDriverManager.chromedriver().setup();
+        WebDriverManager.edgedriver().setup();
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
-        ChromeOptions options = new ChromeOptions();
+        EdgeOptions options = new EdgeOptions();
         desiredCapabilities.setCapability("browserName", "chrome");
         options.merge(desiredCapabilities);
-        driver = new ChromeDriver(options);
+        driver = new EdgeOptions(options);
         driver.get("https://www.saucedemo.com/");
     }
 
