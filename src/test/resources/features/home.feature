@@ -1,8 +1,11 @@
 Feature: Home Module
 
+Background:
+  Given User open application
+
   @smoke @home
   Scenario: Verify welcome page
-    Given User open application
+
     When User on welcome screen
     Then User verify welcome screen
 
